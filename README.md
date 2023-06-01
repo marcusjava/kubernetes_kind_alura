@@ -13,9 +13,13 @@
 
 Kubernetes command-line tools(<a href="https://kubernetes.io/docs/tasks/tools/">kubectl</a>) permite executar comandos em seus clusters kubernetes
 
-### Minikube
+### Kind
 
-<a href='https://minikube.sigs.k8s.io/docs/start/' target="_blank">Minikube</a> é uma ferramenta que facilita o aprendizado e desenvolvimento com kubernetes de fácil instalação.
+<p>
+  <img alt="Schema" src="./kind.png" />
+</p>
+
+<a href='https://kind.sigs.k8s.io/' target="_blank">Kind</a> kubernetes in Docker é uma ferramenta que permite executar clusters kubernetes utilizando docker.
 
 ## 2 - Iniciando o cluster
 
