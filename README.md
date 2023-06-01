@@ -40,41 +40,33 @@ sudo mv ./kind /usr/local/bin/kind
 
 ## 3 - Aplicando as configurações
 
-- portal-configmap.yml - Alterar IP_SISTEMA para o IP externo do sistema noticias
+- portal-configmap.yml - Alterar IP_SISTEMA para o INTERNAL_IP de um dos nós
+
+`kubectl get nodes -o wide`
 
 Criar os seguintes items nessa ordem:
 
 ```markdown
+├── db-deployment.yml
 ├── db-noticias-configmap.yml
 ├── db-noticias-svc.yml
-├── db-deployment.yml
+├── db-noticias.yml
 ├── portal-configmap.yml
-├── portal-service.yml
 ├── portal-deployment.yml
 ├── portal-hpa.yml
+├── portal-service.yml
 ├── sistema-noticias-configmap.yml
-├── sistema-noticias-service.yml
 ├── sistema-noticias-deployment.yml
-├── admin-dashboard.yml
-├── cluster-admin.yml
+├── sistema-noticias-service.yml
+└── sistema-noticias.yml
 ```
 
 `kubectl apply -f item`
 
 ## 4 - Acessando o Portal de Noticias
 
-Para acessar o Portal e o Sistema de Noticias fora do cluster é necessario fazer as seguintes configurações:
-
-`minikube service portal-svc --url`
-
-`minikube sistema-noticias-svc --url`
-
-`minikube service list`
-
-<p>
-  <img alt="Schema" src="./service_list.png" />
-  
-</p>
+- Portal de Noticias - http://ip_node:30000
+- Sistema Noticias - http://ip_node:30002
 
 Acessar as URLs geradas no navegador
 
