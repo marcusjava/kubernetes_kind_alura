@@ -1,5 +1,5 @@
 <p>
-  <img alt="Schema" src="./deployment.png" />
+  <img alt="Schema" src="./img/deployment.png" />
   
 </p>
 
@@ -16,7 +16,7 @@ Kubernetes command-line tools(<a href="https://kubernetes.io/docs/tasks/tools/">
 ### Kind
 
 <p>
-  <img alt="Schema" src="./kind.png" />
+  <img alt="Schema" src="./img/kind.png" />
 </p>
 
 <a href='https://kind.sigs.k8s.io/' target="_blank">Kind</a> kubernetes in Docker é uma ferramenta que permite executar clusters kubernetes num ambiente local utilizando docker.
@@ -30,11 +30,13 @@ sudo mv ./kind /usr/local/bin/kind
 
 ```
 
-## 2 - Iniciando o cluster
+## 2 - Criando cluster com multiplos nós com kind
 
-`minikube start --vm-driver=virtualbox`
+`kind create cluster --name kind-multinodes --config ./kind-3nodes.yaml`
 
-<a href="https://minikube.sigs.k8s.io/docs/drivers/" target="_blank">Ver lista de drivers</a>
+<p>
+  <img alt="Schema" src="./img/kind_create.png" />
+</p>
 
 ## 3 - Aplicando as configurações
 
