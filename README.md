@@ -19,7 +19,15 @@ Kubernetes command-line tools(<a href="https://kubernetes.io/docs/tasks/tools/">
   <img alt="Schema" src="./kind.png" />
 </p>
 
-<a href='https://kind.sigs.k8s.io/' target="_blank">Kind</a> kubernetes in Docker é uma ferramenta que permite executar clusters kubernetes utilizando docker.
+<a href='https://kind.sigs.k8s.io/' target="_blank">Kind</a> kubernetes in Docker é uma ferramenta que permite executar clusters kubernetes num ambiente local utilizando docker.
+
+`
+curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.19.0/kind-linux-amd64
+
+chmod +x ./kind
+
+sudo mv ./kind /usr/local/bin/kind
+`
 
 ## 2 - Iniciando o cluster
 
