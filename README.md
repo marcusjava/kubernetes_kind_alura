@@ -103,7 +103,7 @@ kubectl port-foward -n monitoring svc/prometheus-k8s 9090:9090
 kubectl port-foward -n monitoring svc/grafana 3000:3000
 ```
 
-<a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/" target="_blank">Documentação</a>
+<a href="https://github.com/prometheus-operator/kube-prometheus" target="_blank">Documentação</a>
 
 ## Autor
 
