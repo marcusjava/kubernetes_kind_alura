@@ -3,7 +3,7 @@
   
 </p>
 
-<h1 align="center">Alura cursos Projeto Portal de noticias </h1>
+<h1 align="center">Projeto Alura Portal de noticias </h1>
 
 ### Curso de Kubernetes: Pods, Services e ConfigMaps
 
@@ -70,14 +70,38 @@ Criar os seguintes items nessa ordem:
 
 Acessar as URLs geradas no navegador
 
-## 4 - Acessando o Kubernetes Dashboard
+## 4 - Instalando kube-prometheus
 
 <p>
-  <img alt="Schema" src="./kubernetes_dashboard.png" />
+  <img alt="Schema" src="./img/grafana_kube.png" />
   
 </p>
 
-Kubernetes Dashboard é ferramenta web onde é possível criar e modificar recursos como Deployments, Jobs, Services, verificar de forma visual consumo de CPU e memoria e monitorar o estado dos pods
+kube-prometheus é uma ferramenta para monitorar os nossos clusters kubernetes.
+
+```
+git clone https://github.com/prometheus-operator/kube-prometheus.git
+cd kube-prometheus
+kubectl create -f manifests/setup
+kubectl apply -f manifests/
+
+
+```
+
+Acessando o Prometheus e o Grafana Dashboard
+
+- Verificar a porta dos serviços do prometheus e grafana
+
+`kubectl get svc -n monitoring `
+
+<p>
+  <img alt="Schema" src="./img/kube-svc.png" />
+</p>
+
+```
+kubectl port-foward -n monitoring svc/prometheus-k8s 9090:9090
+kubectl port-foward -n monitoring svc/grafana 3000:3000
+```
 
 <a href="https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/" target="_blank">Documentação</a>
 
